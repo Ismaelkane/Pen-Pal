@@ -19,6 +19,12 @@ from django.contrib.auth import authenticate, login
 from django.http import HttpResponse
 #from django.shortcuts import render, redirect
 from django.contrib.auth import get_user_model
+
+from django.http import HttpResponse
+
+def home(request):
+    return HttpResponse("Welcome to the homepage!")
+
 User = get_user_model()
 class RegisterView(CreateAPIView):
     serializer_class = RegisterSerializer
