@@ -15,6 +15,12 @@ class CustomUserAdmin(UserAdmin):
     )
     # Display language in the user list view
     list_display = UserAdmin.list_display + ('language','language_text')
+
+class CustomAdminSite(admin.AdminSite):
+    site_header = "Custom Admin"
+
+custom_admin_site = CustomAdminSite(name='custom_admin')
+custom_admin_site.register(CustomUser, UserAdmin)
 class MessageAdmin(admin.ModelAdmin):
     list_display = ('sender', 'receiver', 'text', 'translated_text', 'language', 'timestamp')
     search_fields = ('sender__username', 'receiver__username', 'text')
