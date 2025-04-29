@@ -18,5 +18,6 @@ urlpatterns = [
     path('change_language/',views.change_language, name='change_language'),
     path('get_user_info/',views.get_user_info, name='get_user_info'),
     path('get_group_messages/',views.get_group_messages, name='get_group_messages'),
+    path('', views.home, name='home'),
 
 ]
