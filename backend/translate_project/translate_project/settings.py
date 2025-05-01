@@ -10,6 +10,9 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 
+
+
+
 from pathlib import Path
 
 CSRF_TRUSTED_ORIGINS = [
@@ -29,7 +32,21 @@ SECRET_KEY = 'django-insecure-$+q%n*k@ne8=sml@xo)uayj_c864+ls$6ec#r1gowndndrgbht
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1', '.ngrok-free.app', '35.193.152.151']
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', '.ngrok-free.app', '35.193.152.151', '34.41.50.211']
+
+
+
+ASGI_APPLICATION = "translate_project.asgi.application"
+
+CHANNEL_LAYERS = {
+    "default": {
+        "BACKEND": "channels_redis.core.RedisChannelLayer",
+        "CONFIG": {
+            "hosts": [("127.0.0.1", 6379)],
+        },
+    },
+}
+
 
 
 
